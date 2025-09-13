@@ -1,0 +1,342 @@
+/* Templates Container */
+.templates-container {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Dark theme support */
+body[data-theme="dark"] .templates-container {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.templates-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.templates-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.templates-icon {
+  font-size: 2rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.templates-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.template-focus {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.template-description {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.template-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: white;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+/* Enhanced hover effects */
+.template-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+  border-color: var(--template-color);
+}
+
+.template-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--template-color) 0%, var(--template-color) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.template-card:hover::before {
+  opacity: 0.05;
+}
+
+/* Dark theme card styling */
+body[data-theme="dark"] .template-card {
+  background: #2d3748;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid #4a5568;
+}
+
+body[data-theme="dark"] .template-card:hover {
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+  border-color: var(--template-color);
+  background: #374151;
+}
+
+.template-preview {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--template-color) 0%, var(--template-color) 100%);
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .template-preview {
+  background: linear-gradient(135deg, var(--template-color) 0%, #764ba2 100%);
+}
+
+.template-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .template-thumbnail {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.template-preview-icon {
+  font-size: 2rem;
+  color: white;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .template-preview-icon {
+  transform: rotate(360deg);
+}
+
+.template-category {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--template-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .template-category {
+  background: var(--template-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+.template-content {
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.template-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme text colors */
+body[data-theme="dark"] .template-name {
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .template-description {
+  color: #a0aec0;
+}
+
+.template-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.feature-tag {
+  background: linear-gradient(135deg, var(--template-color) 0%, var(--template-color) 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .feature-tag {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.use-template-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--template-color) 0%, var(--template-color) 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0 0 20px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.use-template-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.template-card:hover .use-template-btn::before {
+  left: 100%;
+}
+
+.use-template-btn:hover {
+  background: linear-gradient(135deg, var(--template-color) 0%, #764ba2 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.use-template-btn:hover .btn-icon {
+  transform: scale(1.1);
+}
+
+.templates-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.templates-footer-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.custom-template-link {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+}
+
+.custom-template-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Sparkle animation for icons */
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .templates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .template-content {
+    padding: 1rem;
+  }
+  
+  .template-name {
+    font-size: 1.2rem;
+  }
+  
+  .template-description {
+    font-size: 0.9rem;
+  }
+  
+  .template-focus {
+    font-size: 0.8rem;
+  }
+  
+  .feature-tag {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+  
+  .template-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+} 
